@@ -28,6 +28,7 @@ func Update(w http.ResponseWriter, r *http.Request) {
 		lib.ReturnInternalError(w)
 		return
 	}
+	contact.ID = id
 	if _, err := p.Save(contact); err != nil {
 		lib.ReturnInternalError(w)
 		return
