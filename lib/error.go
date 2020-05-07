@@ -11,3 +11,10 @@ func ReturnInternalError(w http.ResponseWriter) {
 		log.Fatal(err)
 	}
 }
+
+func ReturnClientError(w http.ResponseWriter, text string) {
+	w.WriteHeader(http.StatusBadRequest)
+	if _, err := w.Write([]byte(text)); err != nil {
+		log.Fatal(err)
+	}
+}
