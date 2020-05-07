@@ -17,7 +17,7 @@ func View(w http.ResponseWriter, r *http.Request) {
 	}
 	user, err := p.Load(id)
 	if err != nil {
-		lib.ReturnInternalError(w)
+		lib.ReturnClientError(w, "user not found")
 		return
 	}
 	lib.ReturnJSON(w, user)
