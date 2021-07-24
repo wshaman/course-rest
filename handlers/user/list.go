@@ -1,18 +1,19 @@
-package handlers
+package user
 
 import (
-	"log"
 	"net/http"
 
 	contacts "github.com/wshaman/contacts-stub"
-	"github.com/wshaman/rest-test/lib"
+
+	"github.com/wshaman/course-rest/lib"
 )
 
 func List(w http.ResponseWriter, r *http.Request) {
-	p := contacts.LoaPersistent()
+	p := contacts.LoadPersistent()
 	list, err := p.List()
 	if err != nil {
-		log.Fatal(err)
+		lib.ReturnInternalError(w, err)
+		return
 	}
 	lib.ReturnJSON(w, list)
 }
