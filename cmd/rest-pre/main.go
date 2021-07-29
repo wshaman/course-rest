@@ -1,10 +1,11 @@
 package main
 
 import (
-	"github.com/rodkevich/course-rest/handlers/user"
-	stub_contacts "github.com/wshaman/contacts-stub"
 	"log"
 	"net/http"
+
+	"github.com/rodkevich/course-rest/handlers/user"
+	stub_contacts "github.com/wshaman/contacts-stub"
 
 	"github.com/gorilla/mux"
 )

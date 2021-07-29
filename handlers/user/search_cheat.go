@@ -2,13 +2,12 @@ package user
 
 import (
 	"encoding/json"
-	"github.com/rodkevich/course-rest/lib"
-	contacts "github.com/wshaman/contacts-stub"
 	"io/ioutil"
 	"net/http"
+
+	"github.com/rodkevich/course-rest/lib"
+	contacts "github.com/wshaman/contacts-stub"
 )
-
-
 
 func CheatSearch(w http.ResponseWriter, r *http.Request) {
 	var request map[string]interface{}

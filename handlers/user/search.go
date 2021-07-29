@@ -2,12 +2,12 @@ package user
 
 import (
 	"encoding/json"
-	"fmt"
-	"github.com/rodkevich/course-rest/lib"
-	contacts "github.com/wshaman/contacts-stub"
 	"io/ioutil"
 	"net/http"
-	"sort"
+
+	"github.com/dgryski/go-trigram"
+	"github.com/rodkevich/course-rest/lib"
+	contacts "github.com/wshaman/contacts-stub"
 )
 
 type SearchRequest = struct {
@@ -21,23 +21,22 @@ func Search(w http.ResponseWriter, r *http.Request) {
 		lib.ReturnInternalError(w, err)
 		return
 	}
-
-	sr := SearchRequest{}
-	if err = json.Unmarshal(b, &sr); err != nil {
+	schReq := SearchRequest{}
+	if err = json.Unmarshal(b, &schReq); err != nil {
 		lib.ReturnInternalError(w, err)
 		return
 	}
-
 	existing, _ := p.List()
 	var rtn []contacts.Contact
 	for _, c := range existing {
 		var searchGroup []string
 		searchGroup = append(searchGroup, c.FirstName, c.LastName, c.Phone)
-		if pos := sort.SearchStrings(searchGroup, sr.Text); pos < len(searchGroup) {
+		idx := trigram.NewIndex(searchGroup)
+		found := idx.Query(schReq.Text)
+		if len(found) > 0 {
 			rtn = append(rtn, c)
 		}
 	}
-	fmt.Printf("%q\n", rtn)
 	if err != nil {
 		lib.ReturnInternalError(w, err)
 	}
