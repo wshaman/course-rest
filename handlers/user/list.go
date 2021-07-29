@@ -5,7 +5,7 @@ import (
 
 	contacts "github.com/wshaman/contacts-stub"
 
-	"github.com/wshaman/course-rest/lib"
+	"github.com/rodkevich/course-rest/lib"
 )
 
 func List(w http.ResponseWriter, r *http.Request) {

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/wshaman/course-rest/handlers/user"
+	"github.com/rodkevich/course-rest/handlers/user"
 	"log"
 	"net/http"
 
