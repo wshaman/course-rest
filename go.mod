@@ -1,9 +1,8 @@
-module github.com/wshaman/course-rest
+module github.com/rodkevich/course-rest
 
-go 1.14
+go 1.16
 
 require (
-	github.com/gorilla/mux v1.7.4
-	github.com/stretchr/testify v1.7.0 // indirect
+	github.com/gorilla/mux v1.8.0
 	github.com/wshaman/contacts-stub v0.0.0-20210724212216-60df974b9b84
 )
