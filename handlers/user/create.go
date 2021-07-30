@@ -7,7 +7,7 @@ import (
 
 	stub_contacts "github.com/wshaman/contacts-stub"
 
-	"github.com/rodkevich/course-rest/lib"
+	"github.com/wshaman/course-rest/lib"
 )
 
 func Create(w http.ResponseWriter, r *http.Request) {

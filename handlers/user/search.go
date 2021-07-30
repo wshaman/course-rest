@@ -6,8 +6,8 @@ import (
 	"net/http"
 
 	"github.com/dgryski/go-trigram"
-	"github.com/rodkevich/course-rest/lib"
 	contacts "github.com/wshaman/contacts-stub"
+	"github.com/wshaman/course-rest/lib"
 )
 
 type SearchRequest = struct {

@@ -5,8 +5,8 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"github.com/rodkevich/course-rest/lib"
 	contacts "github.com/wshaman/contacts-stub"
+	"github.com/wshaman/course-rest/lib"
 )
 
 func CheatSearch(w http.ResponseWriter, r *http.Request) {

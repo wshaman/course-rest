@@ -4,8 +4,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/rodkevich/course-rest/handlers/user"
 	stub_contacts "github.com/wshaman/contacts-stub"
+	"github.com/wshaman/course-rest/handlers/user"
 
 	"github.com/gorilla/mux"
 )

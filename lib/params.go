@@ -17,7 +17,7 @@ func IDFromVars(r *http.Request) (uint, error) {
 	return uint(i), nil
 }
 
-func GetFields(i interface{}) (res []string) {
+func FieldsFromStruct(i interface{}) (res []string) {
 	v := reflect.ValueOf(i)
 	for j := 0; j < v.NumField(); j++ {
 		res = append(res, v.Field(j).String())

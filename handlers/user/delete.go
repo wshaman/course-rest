@@ -5,7 +5,7 @@ import (
 
 	stub_contacts "github.com/wshaman/contacts-stub"
 
-	"github.com/rodkevich/course-rest/lib"
+	"github.com/wshaman/course-rest/lib"
 )
 
 func Delete(w http.ResponseWriter, r *http.Request) {
