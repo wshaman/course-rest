@@ -4,7 +4,6 @@ import (
 	"net/http"
 
 	contacts "github.com/wshaman/contacts-stub"
-
 	"github.com/wshaman/course-rest/lib"
 )
 
