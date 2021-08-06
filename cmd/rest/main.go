@@ -15,6 +15,7 @@ func main() {
 	router.HandleFunc("/api/v0/user/{id}", user.Delete).Methods(http.MethodDelete)
 	router.HandleFunc("/api/v0/user/{id}", user.View).Methods(http.MethodGet)
 	router.HandleFunc("/api/v0/user/{id}", user.Update).Methods(http.MethodPut)
+	router.HandleFunc("/api/v0/user/find/{id}", user.Find).Methods(http.MethodGet)
 	log.Println("Starting API server on 8080")
 	if err := http.ListenAndServe(":8080", router); err != nil {
 		log.Fatal(err)
